@@ -371,11 +371,11 @@ function pk_captcha()
     }
     $width = $_GET['w'];
     $height = $_GET['h'];
+    include_once PUOCK_ABS_DIR.'/inc/php-captcha.php';
     $captcha = new CaptchaBuilder();
     $captcha->initialize([
         'width' => intval($width),     // 宽度
         'height' => intval($height),     // 高度
-        'line' => true,     // 直线
         'curve' => true,   // 曲线
         'noise' => 1,   // 噪点背景
         'fonts' => [PUOCK_ABS_DIR . '/assets/fonts/G8321-Bold.ttf']       // 字体
